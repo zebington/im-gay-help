@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+html, body {
+    margin: 0;
+    overflow: hidden;
+}
+
+
+@keyframes wiggle {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+
+    10%,
+    20% {
+        transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+#gay-table {
+    width: 100vw;
+    height: 175vh;
+    display: flex;
+    flex-direction: row;
+}
+
+#gay-table .container {
+    padding: 0;
+    text-align: center;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex: 1;
+    font-size: 10vw;
+}
+
+#gay-table .container > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    transition: transform 1s;
+    z-index: 1;
+}
+
+#gay-table .container:hover > div {
+    transform: translateY(-75vh);
+}
+
+#gay-table .container.wiggle > div::after {
+    animation-name: wiggle;
+    animation-duration: 1s;
+}
+
+#gay-table .container > a {
+    height: 75vh;
+    transform: translateY(-75vh);
+    background-color: white;
+    background-size: contain;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    writing-mode: tb-rl;
+    text-align: left;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 69%;
+    font-size: 15vh;
+}
+
+#gay-table .container#babadook > a {
+    background-image: url("/img/babadook.png");
+}
+#gay-table .container#linked-in > a > img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (orientation: portrait) {
+    #gay-table {
+        width: 175vw;
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    #gay-table .container {
+        flex-direction: row;
+    }
+
+    #gay-table .container > div {
+        font-size: 10vh;
+    }
+
+    #gay-table .container > a {
+        height: auto;
+        width: 75vw;
+        transform: translateX(-75vw);
+        background-position: center right;
+        writing-mode: lr-tb;
+        font-size: 15vw;
+    }
+
+    #gay-table .container:hover > div {
+        transform: translateX(-75vw);
+    }
+
+    #gay-table .container#babadook > a {
+        background-image: url("/img/babadook-mob.png");
+    }
+}
+
+#gay-table .container:nth-child(1) > div {
+    background-color: #E70000;
+    color: #760089;
+    text-shadow: .75vw .75vw 0 #00811F;
+}
+#gay-table .container:nth-child(1) > a {
+    background-color: #760089;
+    color: #E70000;
+}
+
+#gay-table .container:nth-child(2) > div {
+    background-color: #FF8C00;
+    color: #0044FF;
+    text-shadow: .75vw .75vw 0 #760089;
+}
+#gay-table .container:nth-child(2) > div::after {
+    content: 'H';
+}
+#gay-table .container:nth-child(2) > a {
+    background-color: #0044FF;
+    color: #FF8C00;
+}
+
+#gay-table .container:nth-child(3) > div {
+    background-color: #FFEF00;
+    color: #00811F;
+    text-shadow: .75vw .75vw 0 #0044FF;
+}
+#gay-table .container:nth-child(3) > div::after {
+    content: 'E';
+}
+#gay-table .container:nth-child(3) > a {
+    background-color: #00811F;
+    color: #FFEF00;
+}
+
+#gay-table .container:nth-child(4) > div {
+    background-color: #00811F;
+    color: #FFEF00;
+    text-shadow: .75vw .75vw 0 #FF8C00;
+}
+#gay-table .container:nth-child(4) > div::after {
+    content: 'L';
+}
+#gay-table .container:nth-child(4) > a {
+    background-color: #FFEF00;
+    color: #00811F;
+}
+
+#gay-table .container:nth-child(5) > div {
+    background-color: #0044FF;
+    color: #FF8C00;
+    text-shadow: .75vw .75vw 0 #E70000;
+}
+#gay-table .container:nth-child(5) > div::after {
+    content: 'P';
+}
+#gay-table .container:nth-child(5) > a {
+    background-color: #FF8C00;
+    color: #0044FF;
+}
+
+#gay-table .container:nth-child(6) > div {
+    background-color: #760089;
+    color: #E70000;
+    text-shadow: .75vw .75vw 0 #FFEF00;
+}
+#gay-table .container:nth-child(6) > a {
+    background-color: #E70000;
+    color: #760089;
+}
